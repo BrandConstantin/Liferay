@@ -14,8 +14,6 @@ import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.PortalUtil;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.logging.Level;
@@ -25,11 +23,8 @@ import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.Portlet;
 import javax.portlet.PortletException;
-import javax.portlet.PortletPreferences;
-import javax.portlet.ReadOnlyException;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
-import javax.portlet.ValidatorException;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -39,21 +34,22 @@ import org.osgi.service.component.annotations.Reference;
  */
 
 @Component(
-    immediate = true,
-    property = {
-      "com.liferay.portlet.display-category=category.social",
-      "com.liferay.portlet.instanceable=false",
-      "com.liferay.portlet.scopeable=true",
-      "javax.portlet.display-name=" + GuestbookPortletKeys.Guestbook,
-      "javax.portlet.expiration-cache=0",
-      "javax.portlet.init-param.template-path=/",
-      "javax.portlet.init-param.view-template=/guestbookwebportlet/view.jsp",
-      "javax.portlet.resource-bundle=content.Language",
-      "javax.portlet.security-role-ref=power-user,user",
-      "javax.portlet.supports.mime-type=text/html"
-    },
-    service = Portlet.class
-)
+	    immediate = true,
+	    property = {
+	      "com.liferay.portlet.display-category=category.social",
+	      "com.liferay.portlet.instanceable=false",
+	      "com.liferay.portlet.scopeable=true",
+	      "javax.portlet.display-name=Guestbook",
+	      "javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK,
+	      "javax.portlet.expiration-cache=0",
+	      "javax.portlet.init-param.template-path=/",
+	      "javax.portlet.init-param.view-template=/guestbookwebportlet/view.jsp",
+	      "javax.portlet.resource-bundle=content.Language",
+	      "javax.portlet.security-role-ref=power-user,user",
+	      "javax.portlet.supports.mime-type=text/html"
+	    },
+	    service = Portlet.class
+	)
 
 public class GuestbookPortlet extends MVCPortlet {
 	@SuppressWarnings("deprecation")
