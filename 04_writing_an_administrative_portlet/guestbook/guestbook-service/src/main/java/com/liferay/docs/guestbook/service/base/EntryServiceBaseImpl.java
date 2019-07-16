@@ -17,7 +17,6 @@ package com.liferay.docs.guestbook.service.base;
 import com.liferay.docs.guestbook.model.Entry;
 import com.liferay.docs.guestbook.service.EntryService;
 import com.liferay.docs.guestbook.service.persistence.EntryPersistence;
-import com.liferay.docs.guestbook.service.persistence.GuestbookPersistence;
 
 import com.liferay.portal.kernel.bean.BeanReference;
 import com.liferay.portal.kernel.dao.db.DB;
@@ -107,63 +106,6 @@ public abstract class EntryServiceBaseImpl extends BaseServiceImpl
 	 */
 	public void setEntryPersistence(EntryPersistence entryPersistence) {
 		this.entryPersistence = entryPersistence;
-	}
-
-	/**
-	 * Returns the guestbook local service.
-	 *
-	 * @return the guestbook local service
-	 */
-	public com.liferay.docs.guestbook.service.GuestbookLocalService getGuestbookLocalService() {
-		return guestbookLocalService;
-	}
-
-	/**
-	 * Sets the guestbook local service.
-	 *
-	 * @param guestbookLocalService the guestbook local service
-	 */
-	public void setGuestbookLocalService(
-		com.liferay.docs.guestbook.service.GuestbookLocalService guestbookLocalService) {
-		this.guestbookLocalService = guestbookLocalService;
-	}
-
-	/**
-	 * Returns the guestbook remote service.
-	 *
-	 * @return the guestbook remote service
-	 */
-	public com.liferay.docs.guestbook.service.GuestbookService getGuestbookService() {
-		return guestbookService;
-	}
-
-	/**
-	 * Sets the guestbook remote service.
-	 *
-	 * @param guestbookService the guestbook remote service
-	 */
-	public void setGuestbookService(
-		com.liferay.docs.guestbook.service.GuestbookService guestbookService) {
-		this.guestbookService = guestbookService;
-	}
-
-	/**
-	 * Returns the guestbook persistence.
-	 *
-	 * @return the guestbook persistence
-	 */
-	public GuestbookPersistence getGuestbookPersistence() {
-		return guestbookPersistence;
-	}
-
-	/**
-	 * Sets the guestbook persistence.
-	 *
-	 * @param guestbookPersistence the guestbook persistence
-	 */
-	public void setGuestbookPersistence(
-		GuestbookPersistence guestbookPersistence) {
-		this.guestbookPersistence = guestbookPersistence;
 	}
 
 	/**
@@ -371,12 +313,6 @@ public abstract class EntryServiceBaseImpl extends BaseServiceImpl
 	protected EntryService entryService;
 	@BeanReference(type = EntryPersistence.class)
 	protected EntryPersistence entryPersistence;
-	@BeanReference(type = com.liferay.docs.guestbook.service.GuestbookLocalService.class)
-	protected com.liferay.docs.guestbook.service.GuestbookLocalService guestbookLocalService;
-	@BeanReference(type = com.liferay.docs.guestbook.service.GuestbookService.class)
-	protected com.liferay.docs.guestbook.service.GuestbookService guestbookService;
-	@BeanReference(type = GuestbookPersistence.class)
-	protected GuestbookPersistence guestbookPersistence;
 	@ServiceReference(type = com.liferay.counter.kernel.service.CounterLocalService.class)
 	protected com.liferay.counter.kernel.service.CounterLocalService counterLocalService;
 	@ServiceReference(type = com.liferay.portal.kernel.service.ClassNameLocalService.class)
