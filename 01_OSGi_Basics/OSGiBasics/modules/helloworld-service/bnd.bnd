@@ -1,0 +1,3 @@
+Bundle-Name: helloworld-service
+Bundle-SymbolicName: com.liferay.university.hello.impl
+Bundle-Version: 1.0.0

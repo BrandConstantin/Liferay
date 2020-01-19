@@ -1,0 +1,3 @@
+Bundle-Name: hellowworld-command
+Bundle-SymbolicName: com.liferay.university.command
+Bundle-Version: 1.0.0

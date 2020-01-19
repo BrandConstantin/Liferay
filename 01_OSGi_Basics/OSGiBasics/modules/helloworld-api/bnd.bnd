@@ -1,0 +1,4 @@
+Bundle-Name: helloworld-api
+Bundle-SymbolicName: com.liferay.university.hello
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.university.hello.api
