@@ -1,0 +1,3 @@
+Bundle-Name: helloworld-uppercase-service
+Bundle-SymbolicName: com.liferay.university.hello.uppercase.impl
+Bundle-Version: 1.0.0
