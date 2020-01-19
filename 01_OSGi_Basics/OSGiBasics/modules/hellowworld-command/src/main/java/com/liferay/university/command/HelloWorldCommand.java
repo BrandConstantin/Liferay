@@ -4,6 +4,9 @@ import com.liferay.university.hello.api.HelloService;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
+import org.osgi.service.component.annotations.ReferencePolicy;
+import org.osgi.service.component.annotations.ReferencePolicyOption;
 /**
  * @author BrandConstantin
  */
@@ -21,6 +24,20 @@ public class HelloWorldCommand{
 		System.out.println(helloService.hello(what));
 	}
 	
-	@Reference 
+	@Reference(policy=ReferencePolicy.DYNAMIC, 
+			policyOption=ReferencePolicyOption.GREEDY,
+			cardinality=ReferenceCardinality.MANDATORY) 
+	protected void setHelloService(HelloService helloService) {
+		System.out.println("Setting helloService " + helloService.getClass().getName());
+		this.helloService = helloService;
+	}
+	
+	protected void unsetHelloService(HelloService helloService) {
+		System.out.println("Unsetting helloService " + helloService.getClass().getName());
+		if(helloService == this.helloService) {
+			this.helloService = null;
+		}
+	}
+	
 	private HelloService helloService;
 }
